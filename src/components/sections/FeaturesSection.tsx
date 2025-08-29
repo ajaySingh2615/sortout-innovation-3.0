@@ -284,7 +284,7 @@ const WhyChooseUsSection = () => {
 
               {/* CTA Row */}
               <motion.div
-                className="mt-8 flex flex-col items-center md:flex-row md:items-center md:justify-between"
+                className="mt-8 flex flex-col items-center md:flex-row md:items-center md:justify-between md:relative"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 2.0 }}
@@ -317,7 +317,7 @@ const WhyChooseUsSection = () => {
 
                 {/* Trust Badge Card */}
                 <motion.div
-                  className="hidden md:block md:ml-auto md:mt-[-140px] md:self-start"
+                  className="hidden md:block md:mt-[-140px]"
                   initial={{ opacity: 0, scale: 0.8, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{
