@@ -1,16 +1,53 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { AnimatedTooltip } from "../ui/animated-tooltip";
 
 export const HeroSection = () => {
   // Avatar images (placeholder URLs - replace with actual team photos)
-  const avatars = [
-    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
-    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
+  const people = [
+    {
+      id: 1,
+      name: "Aarav Singh",
+      designation: "Frontend Engineer",
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    },
+    {
+      id: 2,
+      name: "Isha Verma",
+      designation: "Product Designer",
+      image:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face",
+    },
+    {
+      id: 3,
+      name: "Rohan Mehta",
+      designation: "Full-stack Dev",
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    },
+    {
+      id: 4,
+      name: "Ananya Rao",
+      designation: "UX Researcher",
+      image:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    },
+    {
+      id: 5,
+      name: "Vihaan Shah",
+      designation: "Mobile Engineer",
+      image:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+    },
+    {
+      id: 6,
+      name: "Sara Kapoor",
+      designation: "Data Scientist",
+      image:
+        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
+    },
   ];
 
   // Brand logos
@@ -44,19 +81,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.6 }}
             className="flex justify-center mb-6"
           >
-            <div className="flex items-center -space-x-3">
-              {avatars.map((avatar, index) => (
-                <motion.img
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  src={avatar}
-                  alt={`Team member ${index + 1}`}
-                  className="w-10 h-10 rounded-full ring-2 ring-white object-cover"
-                />
-              ))}
-            </div>
+            <AnimatedTooltip items={people} />
           </motion.div>
 
           {/* Main Headline */}
