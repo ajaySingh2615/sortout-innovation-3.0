@@ -25,7 +25,7 @@ const WhyChooseUsSection = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <div className="h-[360px] w-full overflow-hidden rounded-[12px] md:h-[520px]">
+              <div className="h-[480px] w-[85%] overflow-hidden rounded-[12px] md:h-[680px] md:w-[80%]">
                 <motion.img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=faces"
                   alt="Professional team collaborating in modern office"
@@ -54,7 +54,7 @@ const WhyChooseUsSection = () => {
 
             {/* Overlay Photo Card */}
             <motion.div
-              className="absolute -bottom-[28px] left-[46%] w-[320px] h-[190px] md:w-[380px] md:h-[220px] -translate-x-1/2 transform"
+              className="absolute -bottom-[28px] left-[46%] w-[280px] h-[260px] md:w-[320px] md:h-[300px] -translate-x-1/2 transform"
               initial={{ opacity: 0, y: 50, rotateY: -15 }}
               whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
               transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
