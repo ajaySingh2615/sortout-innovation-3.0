@@ -71,7 +71,7 @@ export const Navbar = () => {
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-red-700 hover:text-red-900 transition-colors duration-200 font-medium"
+                className="relative text-red-700 hover:text-red-900 transition-colors duration-200 font-heading font-medium"
               >
                 <span className="block">{item.name}</span>
               </Link>

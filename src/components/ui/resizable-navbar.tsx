@@ -120,7 +120,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-heading font-medium text-red-700 transition duration-200 hover:text-red-900 lg:flex lg:space-x-2",
         className
       )}
     >
@@ -128,7 +128,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         <a
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-red-700 hover:text-red-900 font-medium"
+          className="relative px-4 py-2 text-red-700 hover:text-red-900 font-heading font-medium"
           key={`link-${idx}`}
           href={item.link}
         >
@@ -246,7 +246,7 @@ export const NavbarLogo = () => {
       <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
         <span className="text-white font-bold text-lg">S</span>
       </div>
-      <span className="font-medium text-red-900 dark:text-white hidden sm:block">
+      <span className="font-heading font-semibold text-red-900 dark:text-white hidden sm:block">
         SortOut Innovation
       </span>
     </a>
@@ -271,7 +271,7 @@ export const NavbarButton = ({
   | React.ComponentPropsWithoutRef<"button">
 )) => {
   const baseStyles =
-    "px-4 py-2 rounded-lg text-sm font-semibold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-lg text-sm font-heading font-semibold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
   const variantStyles = {
     primary: "bg-red-600 text-white hover:bg-red-700 shadow-lg",
