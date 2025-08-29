@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
+import { Button } from "../ui/stateful-button";
 
 export const HeroSection = () => {
   // Avatar images (placeholder URLs - replace with actual team photos)
@@ -125,9 +126,19 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex justify-center mb-7"
           >
-            <button className="inline-flex items-center justify-center rounded-full bg-red-600 px-5 py-2.5 text-sm font-heading font-semibold text-white shadow hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-all duration-200">
+            <Button
+              // override green → red to match your theme
+              className="bg-red-600 hover:bg-red-700 hover:ring-red-600 ring-red-500 px-5 py-2.5 rounded-full font-heading font-semibold text-sm shadow"
+              onClick={async () => {
+                // simulate an async action so the loader + check animation shows
+                await new Promise((r) => setTimeout(r, 1200));
+                // After success animation finishes automatically,
+                // you can also trigger anything else here if you want (toast, modal open, etc.)
+              }}
+              aria-label="Book a call"
+            >
               Book a call
-            </button>
+            </Button>
           </motion.div>
 
           {/* Trusted Label */}
