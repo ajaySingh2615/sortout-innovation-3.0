@@ -10,7 +10,7 @@ const CTASection = () => {
     <section className="relative py-20 overflow-hidden bg-gradient-to-br from-red-900 via-red-800 to-red-900">
       <BackgroundBeams className="absolute inset-0 opacity-20" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-[100rem] mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

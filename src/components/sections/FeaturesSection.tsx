@@ -7,7 +7,7 @@ import { Breadcrumb } from "../ui/breadcrumb";
 const WhyChooseUsSection = () => {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-24 lg:px-10">
+      <div className="mx-auto max-w-[95rem] px-6 py-20 md:px-8 md:py-24 lg:px-10">
         <div className="flex flex-col gap-10 md:grid md:grid-cols-[1.1fr_0.9fr] md:items-center md:gap-14">
           {/* Left Column - Image Collage */}
           <motion.div
@@ -92,33 +92,32 @@ const WhyChooseUsSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 100, y: 30 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="order-1 md:order-2"
-          >
-            {/* Large Watermark */}
-            <div className="relative">
-              <svg
-                className="absolute -right-[40px] -top-[40px] -z-10 hidden h-[360px] w-[360px] opacity-[0.08] md:block"
-                viewBox="0 0 200 200"
-                fill="none"
-                stroke="#111827"
-                strokeWidth="1"
-              >
-                <circle cx="100" cy="100" r="80" />
-                <circle cx="100" cy="100" r="60" />
-                <circle cx="100" cy="100" r="40" />
-                <circle cx="100" cy="100" r="20" />
-                <line x1="100" y1="20" x2="100" y2="180" />
-                <line x1="20" y1="100" x2="180" y2="100" />
-                <line x1="41" y1="41" x2="159" y2="159" />
-                <line x1="159" y1="41" x2="41" y2="159" />
-              </svg>
+          {/* Large Watermark - Outside animated container */}
+          <div className="relative order-1 md:order-2">
+            <svg
+              className="absolute -right-[40px] -top-[40px] z-0 h-[360px] w-[360px] opacity-[0.06] md:block"
+              viewBox="0 0 200 200"
+              fill="none"
+              stroke="#111827"
+              strokeWidth="1"
+            >
+              <circle cx="100" cy="100" r="80" />
+              <circle cx="100" cy="100" r="60" />
+              <circle cx="100" cy="100" r="40" />
+              <circle cx="100" cy="100" r="20" />
+              <line x1="100" y1="20" x2="100" y2="180" />
+              <line x1="20" y1="100" x2="180" y2="100" />
+              <line x1="41" y1="41" x2="159" y2="159" />
+              <line x1="159" y1="41" x2="41" y2="159" />
+            </svg>
 
+            {/* Right Column - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 100, y: 30 }}
+              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               {/* Overline */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -405,8 +404,8 @@ const WhyChooseUsSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

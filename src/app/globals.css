@@ -181,3 +181,22 @@ pre,
     transform: translateX(calc(-280px * 8 - 24px * 8));
   }
 }
+
+/* Moving border animation for pill shapes */
+@keyframes moving-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-moving-border {
+  background: linear-gradient(90deg, transparent, #ef4444, transparent);
+  background-size: 200% 100%;
+  animation: moving-border 3s ease-in-out infinite;
+}

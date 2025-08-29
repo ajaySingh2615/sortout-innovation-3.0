@@ -39,9 +39,7 @@ export const Breadcrumb = ({
     >
       {isSingleItem ? (
         <div className="relative inline-flex rounded-full bg-red-50 px-4 py-2 border border-red-200 shadow-sm overflow-hidden">
-          <MovingBorder duration={4000} rx="3rem" ry="3rem">
-            <div className="h-0.5 w-6 bg-gradient-to-r from-transparent via-red-500 to-transparent opacity-80 rounded-full" />
-          </MovingBorder>
+          <div className="absolute inset-0 rounded-full animate-moving-border opacity-30" />
           {allItems.map((item, index) => (
             <React.Fragment key={index}>
               <motion.div

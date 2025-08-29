@@ -87,7 +87,7 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-screen bg-white text-red-900 overflow-hidden">
       <div className="relative z-10">
-        <div className="container mx-auto max-w-6xl px-5 pt-20 pb-16 md:pt-20 md:pb-16">
+        <div className="container mx-auto max-w-[95rem] px-5 pt-20 pb-16 md:pt-20 md:pb-16">
           {/* Avatar Stack */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
