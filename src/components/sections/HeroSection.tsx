@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
 import { Button } from "../ui/stateful-button";
 
 export const HeroSection = () => {
+  const [failedLogos, setFailedLogos] = useState<Set<number>>(new Set());
   // Avatar images (placeholder URLs - replace with actual team photos)
   const people = [
     {
@@ -51,12 +52,24 @@ export const HeroSection = () => {
     },
   ];
 
-  // Brand logos
+  // Famous brand logos
   const logos = [
-    { name: "Aceternity UI" },
-    { name: "Gamity" },
-    { name: "Host IT" },
-    { name: "Asteroid Kit" },
+    {
+      name: "Google",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+    },
+    {
+      name: "Microsoft",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+    },
+    {
+      name: "Amazon",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+    },
+    {
+      name: "Apple",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    },
   ];
 
   // App showcase cards (placeholder screenshots)
@@ -141,21 +154,11 @@ export const HeroSection = () => {
             </Button>
           </motion.div>
 
-          {/* Trusted Label */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-center text-xs tracking-wide text-red-600 font-heading font-medium mb-4"
-          >
-            Trusted by famous brands
-          </motion.p>
-
           {/* Logo Row */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="flex gap-12 items-center justify-center mb-16 md:mb-16"
           >
             {logos.map((logo, index) => (
@@ -163,9 +166,20 @@ export const HeroSection = () => {
                 key={index}
                 className="h-7 flex items-center opacity-80 hover:opacity-100 transition-opacity duration-200"
               >
-                <div className="text-red-600/80 font-heading font-medium text-sm">
-                  {logo.name}
-                </div>
+                {failedLogos.has(index) ? (
+                  <div className="text-red-600/80 font-heading font-medium text-sm">
+                    {logo.name}
+                  </div>
+                ) : (
+                  <img
+                    src={logo.logo}
+                    alt={logo.name}
+                    className="h-7 object-contain grayscale hover:grayscale-0 transition-all duration-200"
+                    onError={() => {
+                      setFailedLogos((prev) => new Set(prev).add(index));
+                    }}
+                  />
+                )}
               </div>
             ))}
           </motion.div>
@@ -174,7 +188,7 @@ export const HeroSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 1.2 }}
+            transition={{ duration: 1, delay: 1.0 }}
             className="relative"
           >
             {/* Desktop: Infinite Scroll */}
