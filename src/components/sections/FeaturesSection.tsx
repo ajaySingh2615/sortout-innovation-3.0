@@ -262,7 +262,7 @@ const WhyChooseUsSection = () => {
                 viewport={{ once: true }}
               >
                 <motion.h3
-                  className="font-semibold text-[#111827]"
+                  className="text-base font-semibold text-[#111827] !text-base"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 1.7 }}
@@ -271,7 +271,7 @@ const WhyChooseUsSection = () => {
                   24/7 Support
                 </motion.h3>
                 <motion.p
-                  className="text-[#6B7280]"
+                  className="text-[#6B7280] max-w-[280px] leading-relaxed"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.8 }}
@@ -291,7 +291,7 @@ const WhyChooseUsSection = () => {
                 viewport={{ once: true }}
               >
                 <motion.button
-                  className="inline-flex h-12 items-center rounded-full bg-[#FF3B3B] pl-3 pr-6 text-sm font-semibold text-white shadow-[0_14px_32px_rgba(255,59,59,0.25)] transition hover:brightness-95"
+                  className="inline-flex h-12 items-center rounded-full bg-[#FF3B3B] pl-3 pr-6 text-sm font-semibold text-white shadow-[0_14px_32px_rgba(255,59,59,0.25)] transition hover:brightness-95 cursor-pointer"
                   aria-label="Discover more"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -317,7 +317,7 @@ const WhyChooseUsSection = () => {
 
                 {/* Trust Badge Card */}
                 <motion.div
-                  className="hidden md:block md:ml-auto md:mt-[-40px] md:self-start"
+                  className="hidden md:block md:ml-auto md:mt-[-140px] md:self-start"
                   initial={{ opacity: 0, scale: 0.8, y: 20 }}
                   whileInView={{ opacity: 1, scale: 1, y: 0 }}
                   transition={{
@@ -329,8 +329,8 @@ const WhyChooseUsSection = () => {
                   viewport={{ once: true }}
                 >
                   <motion.div
-                    className="h-[190px] w-[190px] rounded-[14px] bg-white shadow-[0_24px_40px_rgba(0,0,0,0.08)]"
-                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="h-[190px] w-[190px] rounded-[14px] bg-white shadow-[0_24px_40px_rgba(0,0,0,0.08)] cursor-pointer group"
+                    whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
                     {/* Top Accent Bar */}
@@ -339,12 +339,11 @@ const WhyChooseUsSection = () => {
                     {/* Content */}
                     <div className="flex h-[184px] flex-col items-center justify-center p-6">
                       <motion.div
-                        className="mb-4 flex h-12 w-12 items-center justify-center"
+                        className="mb-4 flex h-12 w-12 items-center justify-center group-hover:rotate-180 transition-transform duration-300"
                         initial={{ rotate: -180, scale: 0 }}
                         whileInView={{ rotate: 0, scale: 1 }}
                         transition={{
-                          duration: 0.8,
-                          delay: 2.6,
+                          duration: 0.3,
                           type: "spring",
                           stiffness: 200,
                         }}
@@ -380,10 +379,14 @@ const WhyChooseUsSection = () => {
 
               {/* Mobile Trust Badge */}
               <div className="mt-8 flex justify-center md:hidden">
-                <div className="h-[120px] w-[200px] rounded-[14px] bg-white shadow-[0_24px_40px_rgba(0,0,0,0.08)]">
+                <motion.div
+                  className="h-[120px] w-[200px] rounded-[14px] bg-white shadow-[0_24px_40px_rgba(0,0,0,0.08)] cursor-pointer group"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
                   <div className="h-[6px] w-full rounded-t-[14px] bg-[#FF3B3B]" />
                   <div className="flex h-[114px] flex-col items-center justify-center p-4">
-                    <div className="mb-2 flex h-8 w-8 items-center justify-center">
+                    <motion.div className="mb-2 flex h-8 w-8 items-center justify-center group-hover:rotate-180 transition-transform duration-300">
                       <svg
                         className="h-8 w-8 text-[#FF3B3B]"
                         fill="none"
@@ -397,12 +400,12 @@ const WhyChooseUsSection = () => {
                           d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
                         />
                       </svg>
-                    </div>
+                    </motion.div>
                     <p className="text-center text-sm font-semibold text-[#111827]">
                       Trusted by clients
                     </p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
